@@ -1,37 +1,35 @@
-# JIRA-GitHub Automation Demo 💻🔗
+# Jira GitHub Automation 🛠️
 
-## Overview ℹ️
+This repository contains a GitHub Actions workflow for automating tasks triggered by Jira tickets.
 
-This project demonstrates automation between JIRA and GitHub. When a JIRA ticket transitions to a specific status, it triggers a GitHub webhook, which then executes a shell script to print the current JIRA ticket ID.
+## Workflow Description 📋
 
-## Technologies Used 🛠️
+The workflow is triggered by a manual event (`workflow_dispatch`) and requires the input of the Jira issue key. It runs on an Ubuntu latest runner and performs the following steps:
 
-- JIRA API
-- GitHub API
-- Shell Scripting
-
-## Setup 🛠️
-
-1. Fork this repository.
-2. Create a PAT token from the GITHUB settings page and use that in your JIRA automation.
-3. Ensure that you have the necessary permissions to execute shell scripts.
+1. **Display Information**: Prints information about the GitHub event, runner, branch, and repository. 📝
+2. **Check out Repository Code**: Checks out the code from the repository using the `actions/checkout` action. 🔍
+3. **List Files**: Lists files in the repository directory. 📂
+4. **Display Jira Ticket**: Displays the Jira ticket key that triggered the GitHub Action. 🎫
 
 ## Usage 🚀
 
-1. Transition a JIRA ticket to the designated status.
-2. GitHub webhook will trigger the execution of the `print_jira_id.sh` shell script.
-3. Check the console output to see the current JIRA ticket ID printed by the shell script.
+To use this workflow:
 
+1. Fork this repository. 🍴
+2. Create or modify your own GitHub Actions workflow file in your repository, and paste the content of `main.workflow` into it. 📄
+3. Trigger the workflow manually by selecting "Run workflow" and providing the Jira issue key as an input. 🔑
 
-## License 📝
+## Inputs 💼
 
-This project is licensed under the [MIT License](LICENSE).
+- **issue_key**: The key of the Jira issue that triggers the GitHub Action. This input is required. 🔖
 
-## Acknowledgements 🙏
+## Example 🎨
 
-- This project was inspired by the need for seamless integration between JIRA and GitHub.
-- Special thanks to the developers of the JIRA and GitHub APIs for making this integration possible.
-
-## Contact 📧
-
-For any questions or inquiries, please contact [project maintainer's name/email].
+```yaml
+on:
+  workflow_dispatch:
+    inputs:
+      issue_key:
+        description: 'issue_key'
+        required: true
+```
