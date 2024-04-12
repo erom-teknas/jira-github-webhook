@@ -12,8 +12,8 @@ This project demonstrates automation between JIRA and GitHub. When a JIRA ticket
 
 ## Setup 🛠️
 
-1. Clone this repository to your local machine.
-2. Configure your JIRA and GitHub credentials in the `config.sh` shell script.
+1. Fork this repository.
+2. Create a PAT token from the GITHUB settings page and use that in your JIRA automation.
 3. Ensure that you have the necessary permissions to execute shell scripts.
 
 ## Usage 🚀
