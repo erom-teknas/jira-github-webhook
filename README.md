@@ -16,7 +16,7 @@ The workflow is triggered by a manual event (`workflow_dispatch`) and requires t
 To use this workflow:
 
 1. Fork this repository. 🍴
-2. Create or modify your own GitHub Actions workflow file in your repository, and paste the content of `main.workflow` into it. 📄
+2. Create or modify your own GitHub Actions workflow file in your repository, and paste the content of `jira-github-automation.yaml` into it. 📄
 3. Trigger the workflow manually by selecting "Run workflow" and providing the Jira issue key as an input. 🔑
 
 ## Inputs 💼
