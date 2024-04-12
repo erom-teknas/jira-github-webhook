@@ -21,4 +21,4 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: echo "📝 This is the JIRA ticket which triggered this GITHUB ACTION ${{issue_key}}."
+      - run: echo "📝 This is the JIRA ticket which triggered this GITHUB ACTION ${{inputs.issue_key}}."
